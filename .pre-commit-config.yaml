@@ -1,0 +1,36 @@
+default_language_version:
+  python: python3.12
+
+repos:
+  # Python code quality with Ruff
+  - repo: local
+    hooks:
+      - id: python-ruff-lint
+        name: python-ruff-lint
+        entry: uv
+        args: ["run", "ruff", "check", "--fix"]
+        language: system
+        types: [python]
+        pass_filenames: false
+
+      - id: python-ruff-format
+        name: python-ruff-format
+        entry: uv
+        args: ["run", "ruff", "format"]
+        language: system
+        types: [python]
+        pass_filenames: false
+
+  # Basic file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+        exclude: ^downloads/
+      - id: end-of-file-fixer
+        exclude: ^downloads/
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+        exclude: ^downloads/

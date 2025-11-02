@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual Environment
+.venv/
+
+# Secrets
+.env
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Pre-commit
+.pre-commit-cache/
+
+# Ruff
+.ruff_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+EOF
